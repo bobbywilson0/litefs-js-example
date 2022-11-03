@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>LiteFS Example</title>
+</head>
+
+<body>
+
+<h1>LiteFS Example App</h1>
+
+<form method="POST" action="/generate">
+	<input type="submit" value="Generate Record"/>
+</form>
+
+<h2>Recently added records</h2>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Company</th>
+			<th>Phone</th>
+		</tr>
+		
+		{{ #persons }}
+			<tr>
+				<td>{{ id }}</td>
+				<td>{{ name }}</td>
+				<td>{{ company }}</td>
+				<td>{{ phone }}</td>
+			</tr>
+		{{ /persons }}
+	</table>
+
+
+<br/>
+
+<p>
+	<em>Region: {{ region }}</em>
+</p>
+
+</body>
+</html>
