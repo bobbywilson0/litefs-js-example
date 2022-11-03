@@ -18,8 +18,6 @@ const db = new sqlite3.Database(dsn);
 
 app.get("/", async (req, res) => {
   const region = req.query.region;
-  console.log(`PARAM: ${region}`);
-  console.log(`ENV: ${process.env.FLY_REGION}`);
 
   if (region && region !== process.env.FLY_REGION) {
     console.log(`redirecting from ${process.env.FLY_REGION} to ${region}`);
