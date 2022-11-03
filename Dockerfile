@@ -4,8 +4,6 @@ FROM flyio/litefs:0.2 AS litefs
 # Our final Docker image stage starts here.
 FROM node:alpine
 
-# Copy binaries from the previous build stages.
-# COPY --from=builder /usr/local/bin/litefs-example /usr/local/bin/litefs-example
 COPY --from=litefs /usr/local/bin/litefs /usr/local/bin/litefs
 
 ENV NODE_ENV=production
